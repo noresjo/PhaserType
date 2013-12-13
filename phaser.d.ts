@@ -675,7 +675,7 @@ export var VERSION: string;
             renderTexture(key: string, width: number, height: number): Phaser.RenderTexture;
       }
 
-      class Sprite {
+      class Sprite extends PIXI.DisplayObject {
             constructor(game: Phaser.Game, x: number, y: number, key: string, frame: number);
             game: Phaser.Game;
             exists: boolean;
@@ -1035,7 +1035,7 @@ export var VERSION: string;
             static intersectsRectangle(c: Phaser.Circle, r: Phaser.Rectangle): boolean;
       }
 
-      class Point {
+      class Point extends PIXI.Point{
             constructor(x: number, y: number);
             x: number;
             y: number;
@@ -1049,7 +1049,7 @@ export var VERSION: string;
             clampX(min: number, max: number): Phaser.Point;
             clampY(min: number, max: number): Phaser.Point;
             clamp(min: number, max: number): Phaser.Point;
-            clone(output: Phaser.Point): Phaser.Point;
+            clone(output?: Phaser.Point): Phaser.Point;
             copyTo(dest: any): Object;
             distance(dest: Object, round?: boolean): number;
             equals(a: Phaser.Point): boolean;
@@ -1165,7 +1165,7 @@ export var VERSION: string;
       }
 
       class Easing {
-            Linear: {
+            public Linear: {
                   None: (k: number) => number;
             };
             Quadratic: {
